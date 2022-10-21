@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 
 class StorePicker extends React.Component {
   render() {
@@ -8,8 +8,8 @@ class StorePicker extends React.Component {
         <input type="text" required placeholder="Store Name" />
         <button type="submit">Visit Store →</button>
       </form>
-    );
+    )
   }
 }
 
-export default StorePicker;
+export default StorePicker

@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 
 class App extends React.Component {
   render() {
@@ -8,8 +8,8 @@ class App extends React.Component {
           <header tagline="Fresh Seafood Market" />
         </div>
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App
