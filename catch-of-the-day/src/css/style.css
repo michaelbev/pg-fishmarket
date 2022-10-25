@@ -422,8 +422,10 @@ ul.order li span.count span {
   display: inline-block;
 }
 .total {
-  padding: 2rem 0;
-  font-size: 1.4rem;
+  padding: 1rem 0;
+  font-size: 1.6rem;
+  font-weight: bold;
+  text-align: right;
   border-bottom: 3px solid #000;
   border-top: 3px double #000;
 }
