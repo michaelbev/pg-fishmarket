@@ -4,12 +4,37 @@ import Order from './Order'
 import Inventory from './Inventory'
 import sampleFishes from '../sample-fishes'
 import Fish from './Fish'
+import base from '../base'
+// import { useState, useEffect } from "react";
 
 class App extends React.Component {
   state = {
     fishes: {},
     order: {},
   }
+
+  componentDidMount() {
+    const { params } = this.props.match
+    // first reinstate our localStorage
+    const localStorageRef = localStorage.getItem(params.storeId)
+    if (localStorageRef) {
+      this.setState({ order: JSON.parse(localStorageRef) })
+    }
+
+    this.ref = base.syncState(`${params.storeId}/fishes`, {
+      context: this,
+      state: 'fishes',
+    })
+  }
+
+  componentWillUnmount() {
+    base.removeBinding(this.ref)
+  }
+
+  componentDidUpdate() {
+    localStorage.setItem(this.props.match.params.storeId, JSON.stringify(this.state.order))
+  }
+
   addFish = fish => {
     //take copy of fishes
     const newFishes = { ...this.state.fishes }
