@@ -12,6 +12,7 @@ class AddFishForm extends React.Component {
     const fish = {
       name: this.nameRef.current.value,
       price: parseFloat(this.priceRef.current.value),
+      //FIXME: status: needs to return option name, not option value
       status: this.statusRef.current.value,
       desc: this.descRef.current.value,
       image: this.imageRef.current.value,
