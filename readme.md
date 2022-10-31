@@ -8,3 +8,12 @@
 1. Execute `xcode-select --install` in terminal.
 2. Delete the "node_modules" folder located within the "catch-of-the-day" folder.
 3. Execute `npm install` once more.
+
+
+## Deployment
+
+**Note** - Continous deployment setup using both Netlify and Velcer
+
+### Manual deployment
+1. $netlify deploy --prod
+
