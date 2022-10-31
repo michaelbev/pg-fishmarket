@@ -27,6 +27,8 @@
     "eject": "react-scripts eject",
     "styles": "stylus -u autoprefixer-stylus ./src/css/style.styl -o ./src/css/style.css",
     "now-build": "npm run build && mv build dist",
+    "deploy-netlify": "netlify deploy --prod",
+    "deploy-vercel": "vercel --prod",
     "styles:watch": "npm run styles -- -w"
   },
   "browserslist": [
