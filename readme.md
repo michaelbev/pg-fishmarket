@@ -13,7 +13,3 @@
 ## Deployment
 
 **Note** - Continous deployment setup using both Netlify and Velcer
-
-### Manual deployment
-1. $netlify deploy --prod
-
