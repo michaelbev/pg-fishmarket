@@ -1,0 +1,10 @@
+mutation CreateReviewForBook {
+  createBookReview(input: [{ ISBN: "0743273567", author: "Robert B.", content: "Great book!" }]) {
+    returning {
+      created_at
+      author
+      content
+      status
+    }
+  }
+}
