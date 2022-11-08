@@ -1,5 +1,13 @@
+// Seat arrangement challenge
+// accept an array of integers representing occupied seats
+// return the number of seat combinations that can be made
+// first item in arrac is the number of desks
+
+// 1. seat must be open
+// 2. seat on the left must be open
+// 3. seat down must be open
+
 function ArrayChallenge(arr) {
-  // code goes here
   let deskCount = arr[0]
   let seatCombo = []
   let seatCombos = []
@@ -61,10 +69,15 @@ function ArrayChallenge(arr) {
   return seatCombos.length + 'xXfiXmcX'
 }
 
-const arr1 = [12, 2, 6, 7, 11]
-// const arr2 = [8, 1, 8, 9]
+const arr1 = [12, 2, 6, 5, 7, 11]
+const arr2 = [5, 1, 2]
+const arr3 = [8, 1, 8, 9]
 
 console.log(ArrayChallenge(arr1))
 
-// keep this function call here
+console.log(ArrayChallenge(arr2))
+
+// console.log(ArrayChallenge(arr3))
+
+// keep this function call here for online testing
 // console.log(ArrayChallenge(readline()))

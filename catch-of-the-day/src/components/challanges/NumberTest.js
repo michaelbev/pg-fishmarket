@@ -1,3 +1,7 @@
+// accept array
+// return true if the sum of the array is greater than the highest multiple of two numbers in the array
+// return false if the sum of the array is less than the highest multiple of two numbers in the array
+
 function ArrayChallenge(arr) {
   function doubleSumArray(arr) {
     const sum = arr.reduce((acc, cur) => acc + cur, 0) * 2
