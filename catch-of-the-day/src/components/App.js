@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import Raven from 'raven-js'
 
 import Header from './Header'
 import Order from './Order'
@@ -8,6 +9,10 @@ import sampleFishes from '../sample-fishes'
 import Fish from './Fish'
 import base from '../base'
 // import { useState, useEffect } from "react";
+
+Raven.config(
+  'https://ebc689ea1c1d472c8c1bdc545d50563b@o4504121466880000.ingest.sentry.io/4504121477365761',
+).install()
 
 class App extends React.Component {
   state = {

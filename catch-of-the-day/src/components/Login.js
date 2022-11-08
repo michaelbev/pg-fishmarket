@@ -17,6 +17,13 @@ const Login = props => (
     <button className="facebook" onClick={() => props.authenticate('Facebook')}>
       Log In with Facebook
     </button>
+    <button
+      onClick={() => {
+        throw new Error('Death button clicked! Error thrown!')
+      }}
+    >
+      💀
+    </button>
   </nav>
 )
 
