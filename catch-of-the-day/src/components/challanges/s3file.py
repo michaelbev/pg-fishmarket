@@ -1,3 +1,8 @@
+# grab contents from s3 file
+# append a challengeToken to the end of the file
+# replace every third character with X
+# print out contents
+
 import requests
 import boto3
 from botocore import UNSIGNED
@@ -20,7 +25,6 @@ for o in result.get('Contents'):
     stringContent = (contents.decode("utf-8") + challengeToken)
 
 # replace every third character with X
-# need for loop
 
 newString = ''
 delimiter = 'X'
@@ -31,9 +35,7 @@ for idx, ele in enumerate(stringContent,1):
   else:
     newString = newString + ele
 
-# print(stringContent)
-# print(newString)
+# print out contents
 
 s3 = newString
-
 print(s3)
