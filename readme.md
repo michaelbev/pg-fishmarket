@@ -1,4 +1,4 @@
-# Playground for Fish Market - React
+# Playground for Fish Market - React (local state)
 
 ## To Start
 
