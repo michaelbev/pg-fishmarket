@@ -1,5 +1,5 @@
-import stringFunctions as sF
 import unittest
+import stringFunctions as sF
 
 class TestStringMethods(unittest.TestCase):
 
@@ -22,7 +22,6 @@ class TestStringMethods(unittest.TestCase):
 
     def test_replace3rd2(self):
         self.assertEqual(sF.replace3rd('HelloWorldOfMiceAndMen', 'X', 3), 'HeXloXorXdOXMiXeAXdMXn')
-
 
 if __name__ == '__main__':
     unittest.main()
