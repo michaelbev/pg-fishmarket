@@ -1,5 +1,5 @@
 {
-  "version": 4,
+  "version": 2,
   "name": "pg-fishmarket",
   "builds": [{ "src": "package.json", "use": "@now/static-build" }],
   "routes": [
