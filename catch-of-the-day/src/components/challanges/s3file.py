@@ -7,6 +7,7 @@ import requests
 import boto3
 from botocore import UNSIGNED
 from botocore.client import Config
+import stringFunctions as sF
 
 bucket_name = "coderbytechallengesandbox"
 prefix = "__cb__"
@@ -25,17 +26,6 @@ for o in result.get('Contents'):
     stringContent = (contents.decode("utf-8") + challengeToken)
 
 # replace every third character with X
-
-newString = ''
+spacing = 3
 delimiter = 'X'
-
-for idx, ele in enumerate(stringContent,1):
-  if idx % 3 == 0 and idx != 0:
-    newString = newString + delimiter
-  else:
-    newString = newString + ele
-
-# print out contents
-
-s3 = newString
-print(s3)
+print(sF.replace3rd(stringContent, delimiter, spacing))
