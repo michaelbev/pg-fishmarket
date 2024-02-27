@@ -47,7 +47,8 @@ class Inventory extends React.Component {
 
   authenticate = provider => {
     const authProvider = new firebase.auth[`${provider}AuthProvider`]()
-    firebaseApp.auth().signInWithPopup(authProvider).then(this.authHandler)
+    return firebaseApp.auth().signInWithPopup(authProvider).then(this.authHandler)
+    .catch(error => console.error("Failed to fetch data:", error));
   }
 
   logout = async () => {
