@@ -24,6 +24,17 @@ class App extends React.Component {
     match: PropTypes.object.isRequired,
   }
 
+  /**
+   * Initializes the component state using local storage and sets up database syncing
+   * @example
+   * componentDidMount()
+   * No return value, but state is updated and database syncing is initiated
+   * @param none No parameters for this lifecycle method
+   * @description
+   *   - This is a lifecycle method from React, automatically invoked after the component is mounted to the DOM.
+   *   - It retrieves and parses the store data from localStorage, if available.
+   *   - It establishes a two-way binding between the component's state and the database for the given storeId.
+   */
   componentDidMount() {
     const { params } = this.props.match
     // first reinstate our localStorage
@@ -89,6 +100,20 @@ class App extends React.Component {
     this.setState({ order: newOrder })
   }
 
+  /**
+   * App component serves as the root for the SeaFood Market application.
+   * @component
+   * @example
+   *   <App match={{params: {storeId: 'unique-store-id'}}} />
+   * @prop {object} match - Contains route parameters.
+   * @prop {object} match.params - Specific route parameters.
+   * @prop {string} match.params.storeId - The unique identifier for the seafood store.
+   * @description
+   *   - Provides layout and state management for the 'catch-of-the-day' application.
+   *   - Manages and passes down 'fishes' and 'order' state to child components.
+   *   - Interacts with Inventory component to manipulate fishes state through provided functions.
+   *   - Passes functions to child components to allow adding/removing items from order.
+   */
   render() {
     return (
       <div className="catch-of-the-day">

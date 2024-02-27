@@ -22,6 +22,20 @@ class EditfishForm extends React.Component {
     this.props.updateFish(this.props.index, updatedFish)
   }
 
+  /**
+   * A component for editing the properties of a fish item in an inventory system
+   * @component
+   * @example
+   *   <EditFishForm fish={{name: 'Salmon', price: 1299, status: 'available', desc: 'Fresh salmon from Norway', image: 'salmon.jpg'}} index="fish1" deleteFish={deleteFunction}/>
+   * @prop {object} fish - Object containing properties of the fish to be edited
+   * @prop {string} index - Unique key associated with the fish to identify it in the list
+   * @prop {function} deleteFish - Function to be called to delete a fish from the inventory
+   * @description
+   *   - The component provides inputs for editing fish properties such as name, price, status, description, and image URL
+   *   - The `status` field is a dropdown that allows selection between "available" (Fresh!) and "unavailable" (Sold Out!)
+   *   - Updates to the fish properties are handled via the onChange event handler `handleChange`
+   *   - The `deleteFish` prop function is executed with the `index` as an argument when the "Remove Fish" button is clicked
+   */
   render() {
     return (
       <div className="fish-edit">
