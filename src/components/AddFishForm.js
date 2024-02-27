@@ -27,6 +27,18 @@ class AddFishForm extends React.Component {
     event.currentTarget.reset()
   }
 
+  /**
+   * Provides a form for adding a new fish to the inventory
+   * @component
+   * @example
+   *   <AddFishForm onFishAdd={(fishData) => console.log("Fish added", fishData)} />
+   * @prop {Function} onFishAdd - Callback to invoke when a new fish is added with the form data as its argument
+   * @description
+   *   - `nameRef`, `priceRef`, `statusRef`, `descRef`, and `imageRef` hold references to the respective form fields.
+   *   - The `createFish` method is called on form submission. You must bind this method in the constructor or use class field syntax.
+   *   - Utilize the `ref` attribute to collect input values directly from the DOM.
+   *   - The state is not managed within this component; all data is handled through refs and passed back up to the parent component via `onFishAdd`.
+   */
   render() {
     return (
       <form className="fish-edit" onSubmit={this.createFish}>

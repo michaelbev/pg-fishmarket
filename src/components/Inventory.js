@@ -56,6 +56,24 @@ class Inventory extends React.Component {
     this.setState({ uid: null })
   }
 
+  /**
+   * Represents the inventory section of the application, handling the display of login, permission checks, and inventory management.
+   * @component
+   * @example
+   *   <Inventory storeId='store123' fishes={sampleFishes} updateFish={sampleUpdateFish} addFish={sampleAddFish} deleteFish={sampleDeleteFish} loadSampleFishes={sampleLoadFishes} authenticate={sampleAuthenticate} />
+   * @prop {Object} fishes - An object of fish items where the key is the fish id and the value is the fish details.
+   * @prop {Function} updateFish - The function to call when a fish is updated.
+   * @prop {Function} addFish - The function to call when a new fish is added.
+   * @prop {Function} deleteFish - The function to call when a fish is deleted.
+   * @prop {Function} loadSampleFishes - The function to trigger loading of sample fish data.
+   * @prop {Function} authenticate - The function to call for user authentication.
+   * @prop {string} storeId - The ID of the current store.
+   * @description
+   *   - 'this.state.uid' holds the currently authenticated user's ID.
+   *   - If 'this.state.uid' is not set, it means the user is not logged in, and the login component is rendered.
+   *   - If 'this.state.uid' does not match 'this.state.owner', access is denied to manage the inventory.
+   *   - Only the owner of the store, indicated by 'this.state.uid' matching 'this.state.owner', can manage the inventory.
+   */
   render() {
     const logout = <button onClick={this.logout}> Log out! </button>
     if (!this.state.uid) {
